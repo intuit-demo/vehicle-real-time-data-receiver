@@ -1,9 +1,17 @@
 server:
   port: 8082
 
+spring:
+  data:
+    cassandra:
+      request:
+        consistency: LOCAL_ONE
+      local-datacenter: datacenter1
+      contact-points: cassandra-connector
+      keyspace-name: intuit
+    cassandra.port: 9042
+
 mqtt:
   broker:
     url: tcp://localhost:1883
   topic: vehicle-events-topic
-
-
